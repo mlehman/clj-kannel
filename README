@@ -4,8 +4,16 @@ A Clojure client for Kannel ( http://www.kannel.org/ ).
 
 ## Usage
 
-## License
+    (use 'clj-kannel.client)
+    
+    (def c (new-connection "username" "password" :host "192.168.1.1"))
+    
+    (def sms (new-sms-message "5555551212" "Hello World!"))
+    
+    (send-sms c sms)
+    ;#:clj-kannel.client.Response{:status 202, :message "0: Accepted for delivery"}
 
-Copyright (C) 2010 FIXME
+
+## License
 
 Distributed under the Eclipse Public License, the same as Clojure.
